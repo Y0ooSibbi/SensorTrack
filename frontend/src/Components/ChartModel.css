@@ -1,0 +1,67 @@
+/* ChartModel.css */
+
+.ChartModel {
+  font-family: Arial, sans-serif;
+}
+
+.chart-container {
+  margin-bottom: 20px;
+  border: 2px solid black; /* Solid black border */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden;
+  margin-left: 15px;
+  height: 80vh; /* Set graph height to 100% of viewport height */
+  width: 80vw; /* Set graph width to around 80% of viewport width */
+}
+
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.ChartModel h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.ChartModel label {
+  margin-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.ChartModel select {
+  margin-left: 10px;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .chart-container {
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .chart-container {
+    height: 200px;
+  }
+
+  .ChartModel h1 {
+    font-size: 20px;
+  }
+
+  .ChartModel label {
+    font-size: 14px;
+  }
+
+  .ChartModel select {
+    font-size: 14px;
+  }
+}

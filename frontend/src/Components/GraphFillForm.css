@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+.graph-fill-form-container {
+    max-width: 80%;
+    /* padding: 20px; */
+    margin: 0 auto;
+    /* background-color: rgb(18,18,18); */
+    padding: 10px;
+
+    /* color: white; */
+  }
+
+/* .graph-input-field{
+    width: 20%;
+  } */
+  
+  .graph-fill-form-heading {
+    font-size: 24px;
+    color: #8A51FF;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    width: 80%;
+    /* background-color: rgb(18,18,18); */
+  }
+
+  /*  */
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: gray;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: calc(70% - 5px); /* Adjust width for input fields */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .grediant-button{
+    border-radius: 6px;
+    background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .grediant-border{
+    border-top: 1px solid #8A51FF;
+    border-left: 1px solid  #8A51FF;
+    border-right: 1px solid  #39B2FF;
+    border-bottom: 1px solid #39B2FF;
+  } 
+  
+  @media (max-width: 768px) {
+    .graph-fill-form-container {
+      padding: 10px;
+    }
+  
+    .graph-fill-form-heading {
+      font-size: 20px;
+    }
+  
+    input[type="text"],
+    input[type="number"],
+    select {
+      font-size: 14px;
+      width: calc(60% - 5px); /* Adjust width for smaller screens */
+    }
+  
+    button {
+      font-size: 14px;
+      width: calc(40% - 5px); /* Adjust width for smaller screens */
+    }
+  }
+  
+
+  .hourly-input-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .hourly-input-container .form-group {
+    flex-basis: calc(25% - 10px); /* Adjust width for hourly input fields */
+    margin-right: 10px; /* Adjust spacing between input fields */
+  }
+  
+  .hourly-input-container .form-group:last-child {
+    margin-right: 0; /* Remove margin from the last input field */
+  }
+
+  .btn-create-post a {
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}   
+.grediant-button {
+    border-radius: 6px;
+    background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    border-color: white;
+    height: 30px;
+    width: 10%;
+}
+  
+
+#select-series{
+    background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+    color: white;
+    width: 40%;
+}
+
+#select-series option{
+    color: black;
+    background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+}
