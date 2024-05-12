@@ -10,7 +10,8 @@ function GraphListPage() {
   useEffect(() => {
     const fetchGraphs = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/api/graphs/6074fb3275a63e1cc8a8e2ef");
+        // const response = await axios.get("http://localhost:3001/api/graphs/6074fb3275a63e1cc8a8e2ef");
+        const response = await axios.get(`http://localhost:3001/api/graphs/${localStorage.getItem('userId')}`);
         setGraphs(response.data);
         console.log(response);
       } catch (error) {
@@ -53,7 +54,7 @@ function GraphListPage() {
                 <td>{index + 1}</td>
                 <td>{graph.name}</td>
                 <td>{graph.description}</td>
-                <td><button onClick={() => handleGraphClick(graph)}>View Graph</button></td>
+                <td><button style={{width:150}} className="grediant-button" onClick={() => handleGraphClick(graph)}>View Graph</button></td>
               </tr>
             ))}
           </tbody>

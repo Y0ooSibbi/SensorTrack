@@ -1,228 +1,87 @@
 .login-container {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    background-color: rgb(4, 83, 151);
-    /* background-image: url('/images/login/mylogin.png'); */
-    background: #f0f1f3;
-    position: relative;
-}
-
-.bg-icon {
-    position: absolute;
-}
-
-.bg-icon:nth-child(1) {
-    top: 4%;
-    right: 5%;
-}
-
-.bg-icon:nth-child(2) {
-    top: 4%;
-    left: 5%;
-}
-
-.bg-icon:nth-child(3) {
-    top: 10%;
-    right: 15%;
-}
-
-.bg-icon:nth-child(4) {
-    bottom: 20%;
-    right: 5%;
-}
-
-.bg-icon:nth-child(5) {
-    bottom: 4%;
-    left: 25%;
-}
-
-.bg-icon:nth-child(6) {
-    top: 34%;
-    left: 30%;
-}
-
-.bg-icon:nth-child(7) {
-    top: 70%;
-    left: 50%;
-}
-
-.bg-icon:nth-child(8) {
-    bottom: 14%;
-    left: 35%;
-}
-
-.bg-icon:nth-child(9) {
-    top: 30%;
-    right: 15%;
-}
-
-.bg-icon:nth-child(10) {
-    top: 25%;
-    left: 55%;
-}
-
-.bg-icon:nth-child(11) {
-    bottom: 2%;
-    right: 5%;
-}
-
-.bg-icon:nth-child(12) {
-    top: 74%;
-    right: 85%;
-}
-
-.bg-icon:nth-child(13) {
-    bottom: 4%;
-    right: 25%;
-}
-
-.bg-icon:nth-child(14) {
-    top: 44%;
-    left: 5%;
-}
-
-.bg-icon:nth-child(15) {
-    top: 35%;
-    right: 30%;
-}
-
-.bg-icon:nth-child(16) {
-    top: 24%;
-    left: 5%;
-}
-
-.bg-icon:nth-child(17) {
-    bottom: 4%;
-    left: 5%;
-}
-
-.bg-icon:nth-child(18) {
-    top: 66%;
-    left: 28%;
-}
-
-.bg-icon:nth-child(19) {
-    top: 24%;
-    right: 5%;
-}
-
-.bg-icon:nth-child(20) {
-    top: 5%;
-    right: 50%;
-}
-
-.bg-icon:nth-child(21) {
-    bottom: 29%;
-    right: 12%;
-}
-
-.bg-icon:nth-child(22) {
-    top: 50%;
-    left: 15%;
-}
-
-.bg-icon:nth-child(23) {
-    top: 15%;
-    left: 25%;
-}
-
-.bg-icon:nth-child(24) {
-    bottom: 30%;
-    right: 30%;
-}
-
-.bg-icon:nth-child(25) {
-    top: 14%;
-    right: 25%;
-}
-
-.bg-icon:nth-child(26) {
-    bottom: 4%;
-    left: 15%;
-}
-
-.bg-icon:nth-child(27) {
-    top: 45%;
-    right: 5%;
-}
-
-.bg-icon:nth-child(28) {
-    top: 20%;
-    left: 40%;
-}
-.bg-icon:nth-child(29) {
-    top: 20%;
-    left: 15%;
-}
-.bg-icon:nth-child(30) {
-    top: 10%;
-    right: 35%;
-}
-.bg-icon:nth-child(31) {
-    top: 70%;
-    left: 5%;
-}
-.bg-icon:nth-child(32) {
-    bottom: 10%;
-    right: 15%;
-}
-.bg-icon:nth-child(32) {
-    bottom: 10%;
-    right: 15%;
-}
-.bg-icon:nth-child(33) {
-    bottom: 10%;
-    right: 35%;
-}
-.bg-icon:nth-child(34) {
-    bottom: 5%;
-    right: 55%;
-}
-.bg-icon:nth-child(35) {
-    top: 53%;
-    right: 20%;
-}
-
-.login-box {
+    justify-content: center;
+    height: 100vh;
+    /* background-color: #007bff; */
+    background-image:url('https://media.istockphoto.com/id/1403848173/vector/vector-online-chatting-pattern-online-chatting-seamless-background.jpg?s=612x612&w=0&k=20&c=W3O15mtJiNlJuIgU6S9ZlnzM_yCE27eqwTCfXGYwCSo=')
+  }
+  
+  .image-container {
+    /* flex: 1; */
+  }
+  
+  .login-box {
+    /* flex: 1; */
+    background-color: white;
+    width: 350px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: gray;
-    text-align: center;
-}
+    align-items: center;
+    /* justify-content: center; */
+    /* background-color: #e22222; */
+    border-style: solid ;
+    border-color: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 50%;
+  }
+  
+  .login-box input[type="text"]{
+    /* margin-top: 50px; */
+  }
 
-.login-box img {
-    height: auto;
-    width: auto;
-    margin: 0 30%;
-}
+  .login-box input[type="text"],
+  .login-box input[type="password"],
+  .login-box select {
+    /* width: calc(100% - 20px); */
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 300px;
+  }
+  
+  .login-box input[type="submit"] {
+    width: 100%;
+    /* padding: 10px; */
+    margin: 0 auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .login-box input[type="submit"]:hover {
+    background-color: #19426f;
+  }
+  
 
-.login-box h3 {
-    color: var(--background-color-02, #697381);
-    /* Medium 26/left */
-    font-size: 26px;
-    font-style: normal;
+  .grediant-button {
+    border-radius: 6px;
+    background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+    color: white;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: normal;
-    margin:1rem 0rem;
+    border-color: white;
+    height: 60px;
+    /* width: 100px; */
 
-    /* text-shadow: 0 4px 6px rgba(4, 83, 151, 0.5); */
+    /* margin-left: 30%; */
 }
 
-
-.login-box button span {
-    font-weight: 600;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    letter-spacing: 0.1rem;
-    font-size: 15px;
-    margin-left: 0.5rem;
+#select-series{
+    background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+    color: white;
+    width: 500;
+    /* height: 35px; */
 }
-@media screen and (max-width:992px) {
-    .login-box h3{
-        font-size: 20px !important;
-    }
+
+#select-series option{
+    color: black;
+    background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
 }

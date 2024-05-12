@@ -67,8 +67,9 @@ app.post('/api/register', async (req, res) => {
 });
 
 app.post('/api/login', async (req, res) => {
-  const {username,password} = req.body;
-  const user = await User.findOne({ username });
+  console.log(req.body);
+  const {username,password,userType} = req.body;
+  const user = await User.findOne({ username ,userType});
   if (!user) {
     return res.status(404).json({ error: 'User not found' });
   }
@@ -77,7 +78,7 @@ app.post('/api/login', async (req, res) => {
     return res.status(401).json({ error: 'Invalid password' });
   }
   const token = jwt.sign({ username: user.username }, 'secret_key');
-  res.json({ token });
+  res.json({ token , userId:user.userId});
 });
 
 // Define route to insert graph data

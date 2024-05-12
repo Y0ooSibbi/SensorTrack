@@ -68,3 +68,15 @@
     cursor: pointer;
     border-radius: 4px;
 }
+
+.grediant-button {
+  border-radius: 6px;
+  background: linear-gradient(126deg, #8A51FF -9.26%, #39B2FF 79.86%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  border-color: white;
+  /* height: 60px;
+  width: 100px; */
+  /* margin-left: 30%;   */
+}
