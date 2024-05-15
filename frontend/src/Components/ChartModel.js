@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
 import axios from "axios";
 import "./ChartModel.css";
+import Navbar from "./Navbar";
 
 function LineChart({ chartData }) {
   return (
@@ -136,7 +137,7 @@ function HeatmapChart({ chartData }) {
   );
 }
 
-function ChartModel() {
+function ChartModel(props) {
   const [chartData, setChartData] = useState({
     options: {
       chart: {
@@ -168,49 +169,52 @@ function ChartModel() {
   const [chartType, setChartType] = useState("line");
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost:3001/api/graphs/6074fb3275a63e1cc8a8e2ef"
-        );
-        console.log(response);
-        const data = response.data[18]; // Get the response data
+    console.log("s");
+    console.log(props.graphData);
+    setChartData(props.graphData);
+    // const fetchData = async () => {
+    //   try {
+    //     const response = await axios.get(
+    //       "http://localhost:3001/api/graphs/6074fb3275a63e1cc8a8e2ef"
+    //     );
+    //     console.log(response);
+    //     const data = response.data[18]; // Get the response data
 
-        // Extracting data from the fetched objecta
-        const categories = data.options.xaxis.categories;
-        const temperatureData = data.series.find(
-          (series) => series.name === "Temperature" 
-        ).data;
-        const humidityData = data.series.find(
-          (series) => series.name === "Humidity"
-        ).data;
+    //     // Extracting data from the fetched objecta
+    //     const categories = data.options.xaxis.categories;
+    //     const temperatureData = data.series.find(
+    //       (series) => series.name === "Temperature" 
+    //     ).data;
+    //     const humidityData = data.series.find(
+    //       (series) => series.name === "Humidity"
+    //     ).data;
 
-        setChartData({
-          ...chartData,
-          options: {
-            ...chartData.options,
-            xaxis: {
-              ...chartData.options.xaxis,
-              categories: categories,
-            },
-          },
-          series: [
-            {
-              ...chartData.series[0],
-              data: temperatureData,
-            },
-            {
-              ...chartData.series[1],
-              data: humidityData,
-            },
-          ],
-        });
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+    //     setChartData({
+    //       ...chartData,
+    //       options: {
+    //         ...chartData.options,
+    //         xaxis: {
+    //           ...chartData.options.xaxis,
+    //           categories: categories,
+    //         },
+    //       },
+    //       series: [
+    //         {
+    //           ...chartData.series[0],
+    //           data: temperatureData,
+    //         },
+    //         {
+    //           ...chartData.series[1],
+    //           data: humidityData,
+    //         },
+    //       ],
+    //     });
+    //   } catch (error) {
+    //     console.error("Error fetching data:", error);
+    //   }
+    // };
 
-    fetchData();
+    // fetchData();
   }, []);
 
   const handleChartTypeChange = (type) => {
@@ -218,8 +222,10 @@ function ChartModel() {
   };
 
   return (
+    <>
+    {/* <Navbar/> */}
     <div className="ChartModel">
-        <h1>Sensor Data</h1>
+        <h1 style={{marginLeft:20}}>Sensor Data</h1>
         <div className="row">
             <div className="col">
                 {chartType === "line" && <LineChart chartData={chartData} />}
@@ -241,13 +247,14 @@ function ChartModel() {
                     <option value="bar">Bar Chart</option>
                     <option value="area">Area Chart</option>
                     <option value="radar">Radar Chart</option>
-                    <option value="histogram">Histogram Chart</option>
+                    {/* <option value="histogram">Histogram Chart</option> */}
                     <option value="scatter">Scatter Chart</option>
                     <option value="heatmap">Heatmap Chart</option>
                 </select>
             </div>
         </div>
     </div>
+                    </>
 );
 }
 

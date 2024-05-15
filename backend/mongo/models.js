@@ -33,6 +33,7 @@ const graphSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     name: { type: String, default: "Random Graph" }, // Add 'name' field with default value
     description: { type: String, default: "Random data for temperature and humidity" }, // Add 'description' field with default value
+    date:{type:String},
     options: {
         colors: { type: [String], default: ["#E91E63", "#FF9800"] },
         chart: { id: { type: String, default: "basic-bar" } },

@@ -2,9 +2,10 @@
     background-color: black;
 }
 .graph-table {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
-    margin: 0 auto;
+    margin: 20px 20px 20px 20px;
+    margin-right: 20px;
     border-radius: 8px;
     overflow: hidden;
     font-family: Arial, sans-serif;
@@ -61,7 +62,7 @@
 .back-to-table{
     position: absolute;
     right: 190px;
-    top: 150px;
+    top: 200px;
     border: none;
     background-color: #4caf50;
     color: white;

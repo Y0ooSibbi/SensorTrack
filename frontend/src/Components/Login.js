@@ -24,12 +24,13 @@ function Login() {
       console.log(response.data);
       const decodedToken = decodeToken(response.data.token);
       console.log(decodeToken);
-      console.log(decodeToken.username);
       localStorage.setItem('token',response.data.token)
       localStorage.setItem('userId',response.data.userId)
-      // localStorage.setItem('token',response.data.username)
-      // localStorage.setItem('token',response.data.username)
-      window.location.href='http://localhost:3000/showGraph'
+      localStorage.setItem('username',response.data.username)
+      localStorage.setItem('userType',userType)
+
+
+      window.location.href='http://localhost:3000/graph-list-page'
     } catch (error) {
       // setError('Invalid username or password');
       toast.error('Invalid username or password'); // Display success notification

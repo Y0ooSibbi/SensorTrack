@@ -2,7 +2,8 @@
 .graph-fill-form-container {
     max-width: 80%;
     /* padding: 20px; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    margin-left: 12px;
     /* background-color: rgb(18,18,18); */
     padding: 10px;
 

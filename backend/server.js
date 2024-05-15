@@ -78,7 +78,7 @@ app.post('/api/login', async (req, res) => {
     return res.status(401).json({ error: 'Invalid password' });
   }
   const token = jwt.sign({ username: user.username }, 'secret_key');
-  res.json({ token , userId:user.userId});
+  res.json({ token , userId:user.userId,username:user.username});
 });
 
 // Define route to insert graph data
@@ -90,16 +90,19 @@ app.post('/api/insertGraphData/:userId', async (req, res) => {
       return res.status(400).json({ error: 'Invalid userId' });
     }
     // Extract graph data from request body
-    const { name, description, options, series } = req.body;
+    const { name, description,date, options, series } = req.body;
+    console.log(date);
 
     // Create a new graph object
     const graph = new Graph({
       userId: new mongoose.Types.ObjectId(userId), // Convert userId to ObjectId
       name,
       description,
+      date:date,
       options,
       series
     });
+    console.log(graph);
 
     // Save the graph data to MongoDB
     await graph.save();

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ChartModel from "./ChartModel";
 import "./GraphListPage.css"; // Import CSS file
+import Navbar from "./Navbar";
 
 function GraphListPage() {
   const [graphs, setGraphs] = useState([]);
@@ -10,8 +11,8 @@ function GraphListPage() {
   useEffect(() => {
     const fetchGraphs = async () => {
       try {
-        // const response = await axios.get("http://localhost:3001/api/graphs/6074fb3275a63e1cc8a8e2ef");
-        const response = await axios.get(`http://localhost:3001/api/graphs/${localStorage.getItem('userId')}`);
+        const response = await axios.get("http://localhost:3001/api/graphs/6074fb3275a63e1cc8a8e2ef");
+        // const response = await axios.get(`http://localhost:3001/api/graphs/${localStorage.getItem('userId')}`);
         setGraphs(response.data);
         console.log(response);
       } catch (error) {
@@ -32,6 +33,8 @@ function GraphListPage() {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="graph-list-container">
       {selectedGraph ? (
         <div>
@@ -45,6 +48,7 @@ function GraphListPage() {
               <th>Index</th>
               <th>Graph Name</th>
               <th>Graph description</th>
+              <th>Date</th>
               <th>View Graph</th>
             </tr>
           </thead>
@@ -54,6 +58,7 @@ function GraphListPage() {
                 <td>{index + 1}</td>
                 <td>{graph.name}</td>
                 <td>{graph.description}</td>
+                <td>{graph.date}</td>
                 <td><button style={{width:150}} className="grediant-button" onClick={() => handleGraphClick(graph)}>View Graph</button></td>
               </tr>
             ))}
@@ -61,6 +66,7 @@ function GraphListPage() {
         </table>
       )}
     </div>
+          </>
   );
 }
 

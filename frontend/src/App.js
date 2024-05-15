@@ -20,12 +20,13 @@ function App() {
     <BrowserRouter>
         <Routes>
           {/* <Navbar/> */}
+        <Route path='/navbar' element={<Navbar />} /> {/* Allow access to register page without authentication */}
+        <Route path='/graph-list-page' element={<GraphListPage />} /> {/* Allow access to register page without authentication */}
         <Route path='/login' element={<Login />} /> {/* Allow access to register page without authentication */}
+        <Route path='add-graph' element={<GraphFillForm />} /> {/* Allow access to register page without authentication */}
+        <Route path='showGraph' element={<ChartModel />} /> {/* Allow access to register page without authentication */}
+        {/* <Route path='showGraph' element={<ChartModel />} /> Allow access to register page without authentication */}
           <Route path='/' element={!isAuth  ? <Navigate to={'login'} /> : <GraphListPage />} >
-        <Route path='register' element={<Register />} /> {/* Allow access to register page without authentication */}
-        <Route path='graph' element={<GraphFillForm />} /> {/* Allow access to register page without authentication */}
-        <Route path='showGraph' element={<ChartModel />} /> {/* Allow access to register page without authentication */}
-        <Route path='showGraph' element={<ChartModel />} /> {/* Allow access to register page without authentication */}
         </Route>
     </Routes  >
   </BrowserRouter>
